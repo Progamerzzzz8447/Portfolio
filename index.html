@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrollable Image with Margins</title>
+    <title>Scrollable Image with Responsive Margins</title>
     <style>
         * {
             margin: 0;
@@ -25,9 +25,11 @@
             justify-content: center;
         }
 
+        /* Default - for mobile (no margins) */
         .image-container {
-            width: 80vw; /* 80% of the screen width */
-            margin-top: 20px; /* Adds margin to the top */
+            width: 100vw; /* Full width on mobile */
+            height: auto; /* Auto height to maintain aspect ratio */
+            margin-top: 20px; /* Top margin for spacing */
         }
 
         .image-container img {
@@ -35,6 +37,15 @@
             height: auto; /* Keeps aspect ratio (no squishing!) */
             display: block;
         }
+
+        /* Media query for larger screens (PC) */
+        @media (min-width: 768px) {
+            .image-container {
+                width: 80vw; /* 80% of the screen width for larger screens */
+                margin-top: 20px; /* Keeps top margin */
+            }
+        }
+
     </style>
 
 
